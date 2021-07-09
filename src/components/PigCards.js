@@ -1,53 +1,37 @@
 import React from "react";
 
+const PigCards = ({ hogs, filteredHogs, showInformation, onPigSelect}) => {    
+   
+// const showPigInfo = () => setShowInformation(true) {
 
-const PigCards = ({ hogs }) => {    
+//     return (
+//   <div>
+//   { showInformation ? <PigInfo /> : null })
+//   </div>
+// })
+   
+   
     return (
-        hogs.map(hog => (
             //have to map through array of objects to display hogs
-        <div className="pigTile">
-            <h3>{hog.name}</h3>
+        <div className="pigTile" >
+            <h3>{hogs.name}</h3>
                 <img
-                alt={hog.name}
-                src={hog.image}
+                alt={hogs.name}
+                src={hogs.image} 
+                style={{width:250, height:250}}
                 />
-            <p>
-                {hog.specialty}
-            </p>
-            <p>    
-                {hog.greased}
-            </p>
-            <p>   
-                {hog.weight} tons
-            </p>
-            {/* <p>
-                {hog.[4]}
-            </p> */}
+
+            <div className="hiddenInfo" onClick={{onPigSelect} ? "hidden": null}>
+                 <p>Specialty: {hogs.specialty}</p>
+                 <p>Greased: {hogs.greased}</p>
+                 <p>Weight: {hogs.weight} tons</p>
+                 <p>Highest Medal Achieved: {hogs["highest medal achieved"]} </p>
+            </div>
+            
         </div>
     
-    )))
+    )
 }
-
-
-
 
 export default PigCards;
 
-
-/* <div className={"card"}>
-      <h2>{toy.name}</h2>
-      { featuredToy === toy.name && <h4>Featured Toy!!!</h4> }
-      <img
-          alt={toy.name}
-          src={toy.image}
-          className={"toy-avatar"}
-      />
-      <p>{`${toy.likes} likes`}</p>
-      <button
-          className={"like-btn"}
-          id={toy.id}
-          onClick={handleButtonClick}
-      >
-        Pick me!
-      </button>
-    </div> */
