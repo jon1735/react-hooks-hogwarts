@@ -1,14 +1,16 @@
 import React from "react";
 
-const PigSorter = ({ name, weight }) => {
+const PigSorter = ({ name, weight, filteredHogs }) => {
         return (
             <div>
-            <button className="buttonName">
+                <input type= "checkbox" />
+            <button className="buttonName" onClick={filteredHogs}>
                 name
             </button>
             <button className="buttonWeight">
                 weight
             </button>
+
             </div>
     )
 }

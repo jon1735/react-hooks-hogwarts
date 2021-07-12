@@ -4,15 +4,20 @@ import PigCardList from "./PigCardList";
 import hogs from "../porkers_data";
 import PigSorter from "./PigSorter";
 
-function App() {
+// filteredHogs.sort((a, b) => a[hogs.name].localeCompare(b[hogs.name]))
+
+function App() {  
+
   return (
     <div className="App">
       <Nav />
       <PigSorter 
       name={hogs.name}
       weight={hogs.weight}
+      // filteredHogs={filteredHogs}
       />
       <PigCardList 
+      // filteredHogs={filteredHogs}
       hogs={hogs}
       />
     </div>
